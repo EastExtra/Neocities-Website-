@@ -10,44 +10,41 @@
 </head>
 <body>
     <main>
+        <!-- Main title and profile -->
         <h1 class="typing-animation">Lilo</h1>
         <p>17</p>
-        <img src="main.png" alt="profile picture" class="profile-image"> 
+        <img src="main.png" alt="profile picture" class="profile-image">
 
-        <!-- Social links -->
+        <!-- Social media links -->
         <div class="socials">
             <a href="https://discord.com/users/1219592590073139260" target="_blank" aria-label="Discord" class="social-link">
-                <img src="discord.png" alt="discord">
+                <img src="discord.png" alt="Discord">
             </a>
             <a href="https://x.com/riroasu" target="_blank" aria-label="Twitter" class="social-link">
-                <img src="twitter.png" alt="twitter">
+                <img src="twitter.png" alt="Twitter">
             </a>
-            <a href="https://bsky.app/profile/liloasu.bsky.social" target="_blank" aria-label="bluesky" class="social-link">
-                <img src="bluesky.png" alt="bluesky">
+            <a href="https://bsky.app/profile/liloasu.bsky.social" target="_blank" aria-label="Bluesky" class="social-link">
+                <img src="bluesky.png" alt="Bluesky">
             </a>
         </div>
-        <p class="status">Lilo is <span>online</span></p>
 
-        <!-- Add clock element here -->
+        <!-- Status and clock -->
+        <p class="status">Lilo is <span>online</span></p>
         <p id="clock"></p>
+
+        <!-- Blog link with hover effect -->
         <a href="#" id="blog">blog</a>
 
-        <!-- Pink text under the blog link -->
+        <!-- Pink text and Windows warning -->
         <p id="camText">cam</p>
-
-        <!-- Warning message for Windows users -->
-        <div id="windowsWarning" class="windows-warning hidden">
-            >:(
-        </div>
-
-        <!-- Content hidden for Windows users -->
+        <div id="windowsWarning" class="windows-warning hidden"> >:( </div>
         <div class="windows-hide">
             <p id="personalMessage">ewww....</p>
         </div>
-
-        <!-- Link to external JavaScript files -->
-        <script src="osDetection.js"></script>
-        <script src="clock.js"></script>
     </main>
+
+    <!-- External JS files -->
+    <script src="osDetection.js"></script>
+    <script src="clock.js"></script>
 </body>
 </html>
