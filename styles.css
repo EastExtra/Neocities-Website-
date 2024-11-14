@@ -1,0 +1,213 @@
+/* Typing animation for h1 */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 3.8ch; /* Adjusted width to fit "Lilo" more closely */
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+/* General styling */
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased; /* macOS-specific */
+    -moz-osx-font-smoothing: grayscale; /* Linux/Firefox-specific */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    color: white; /* This will set the text color to solid purple */
+    -webkit-text-stroke: 0; /* Ensures no outline is applied */
+    text-shadow: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 2s steps(4, end) forwards, blink-caret 0.75s step-end infinite 2s;
+    margin: 0;
+    -webkit-text-stroke: 0.5px white; /* macOS-specific */
+}
+
+p {
+    font-weight: 400;
+    margin-top: 20px;
+    -webkit-font-smoothing: antialiased; /* macOS-specific */
+}
+
+.profile-image {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.socials img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.2s ease-in-out; /* Smoother transition on hover */
+}
+
+.socials img:hover {
+    transform: scale(1.1);
+}
+
+/* Tooltip styling for Discord icon */
+.socials img[alt="discord"] {
+    position: relative;
+}
+
+.socials img[alt="discord"]::after {
+    content: "placeholder";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    pointer-events: none;
+}
+
+.socials img[alt="discord"]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+#blog {
+    position: relative;
+    display: inline-block;
+    font-family: 'VT323', monospace;
+    font-size: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white; /* Set text color to white */
+}
+
+#blog::before,
+#blog::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid white; /* White border for the outline */
+    transition: all 0.3s ease;
+    pointer-events: none; /* Prevent pseudo-elements from blocking interactions with text */
+}
+
+/* Horizontal lines positioned for animation */
+#blog::before {
+    top: 0;
+    left: 0;
+    width: 0; /* Initially hidden */
+    height: 0; /* Initially hidden */
+}
+
+#blog::after {
+    bottom: 0;
+    right: 0;
+    width: 0; /* Initially hidden */
+    height: 0; /* Initially hidden */
+}
+
+/* Complete the square outline on hover */
+#blog:hover::before {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+
+#blog:hover::after {
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+/* Bad experience for Windows users */
+.windows-warning {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    animation: flashing 1s infinite alternate;
+}
+
+/* Flashing text animation */
+@keyframes flashing {
+    0% { opacity: 1; }
+    100% { opacity: 0.1; }
+}
+
+/* Hide content for Windows users */
+.windows-hide {
+    display: none;
+}
+
+/* Normal experience (for non-Windows users like Mac) */
+.normal-experience {
+    display: block;
+}
+
+/* Mac or others will just see the regular content */
+.windows-warning.hidden {
+    display: none;
+}
+
+/* Pink text for "cam" under blog link */
+#camText {
+    color: pink;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}

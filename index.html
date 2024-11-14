@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your main CSS file -->
+  <style>
+    /* Inline styles for the loading page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* Black background */
+      margin: 0;
+    }
+    .loading-screen {
+      text-align: center;
+      font-size: 16px; /* Small text size */
+      color: white; /* White text */
+    }
+    #windowsMessage {
+      color: red;
+      font-size: 14px; /* Slightly smaller message */
+      font-weight: bold;
+      display: none;
+    }
+    #blackberryMessage {
+      color: pink;
+      font-size: 14px; /* Slightly smaller message */
+      font-weight: bold;
+      display: none;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="loadingScreen" class="loading-screen">
+    <p>Loading, please wait...</p>
+  </div>
+  <div id="systemInfo" class="loading-screen hidden">
+    <p><strong>Operating System: <span id="os"></span></strong></p>
+    <p id="windowsMessage">ew...</p> <!-- Windows message -->
+    <p id="blackberryMessage">:3</p> <!-- BlackBerry message in pink -->
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="loadingScript.js"></script>
+</body>
+</html>
